@@ -2,6 +2,11 @@
  * Copyright (c) 2019. Fábrica Introductoria de Aplicaciones Informáticas. Universidad de las Ciencias Informáticas (UCI)
  */
 const styles = theme => ({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh'
+    },
     card: {
         display: "flex",
         margin: "7px",
@@ -42,7 +47,7 @@ const styles = theme => ({
         objectFit: "cover",
         borderRadius: "15px"
     },
-    root: {
+    /*root: {
         marginTop: "20px",
         display: "flex",
         flexWrap: "wrap",
@@ -50,7 +55,7 @@ const styles = theme => ({
         overflow: "hidden",
         backgroundColor: theme.palette.background.paper,
         margin: 10
-    },
+    },*/
     icon: {
         color: "rgba(255, 255, 255, 0.54)",
     },

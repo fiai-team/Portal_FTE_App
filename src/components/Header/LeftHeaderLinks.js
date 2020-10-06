@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import {List, ListItem, Link as MaterialLink, withStyles} from "@material-ui/core";
+import React from "react";
+import {List, ListItem, withStyles} from "@material-ui/core";
 import CustomDropdown from "../CustomDropdown";
-import {headerLinksStyles} from "./styles";
+import {headerLinksStyles as styles} from "./styles";
+import Link from "next/link";
 
 class LeftHeaderLinks extends React.Component {
 
@@ -170,7 +170,7 @@ class LeftHeaderLinks extends React.Component {
                                     UJC
                                 </a>
                             </Link>,
-                            <Link href="/organizaciones/feu">
+                            <Link href="/organizaciones/feu" >
                                 <a className={classes.dropdownLink}>
                                     FEU
                                 </a>
@@ -184,5 +184,5 @@ class LeftHeaderLinks extends React.Component {
 }
 
 
-export default withStyles(headerLinksStyles)(LeftHeaderLinks);
+export default withStyles(styles)(LeftHeaderLinks);
 

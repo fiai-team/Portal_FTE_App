@@ -1,26 +1,34 @@
 import React from "react";
+import AliceCarousel from 'react-alice-carousel';
 import classNames from "classnames";
 import propTypes from "prop-types";
 import {withStyles} from "@material-ui/core";
-import SwipeableViews from "react-swipeable-views";
-import {autoPlay} from "react-swipeable-views-utils";
 import styles from "./styles";
 import ServerManager from "../../apis/server";
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 class Parallax extends React.Component {
 
     constructor(props) {
         super(props);
-
+console.log(props.items)
         this.state = {
             transform: "",
             index: 0,
-            slideItems: []
+            slideItems: props.items
         };
         this.resetTransform = this.resetTransform.bind(this);
         this.handleChangeIndex = this.handleChangeIndex.bind(this);
+    }
+
+    renderItems() {
+        const {classes} = this.props;
+        const {slideItems} = this.state;
+        return slideItems.map((item, position) => (
+            <img key={position} className={classes.carouselImg}
+                 src={item.imageUrl}>
+            </img>
+        ))
+
     }
 
     render() {
@@ -33,19 +41,12 @@ class Parallax extends React.Component {
         });
         const {slideItems} = this.state;
         return (
-            <div
-                className={parallaxClasses}
-                style={{...style, transform: this.state.transform, display: this.props.show ? "block" : "none"}}>
-                <AutoPlaySwipeableViews index={this.state.index} onChangeIndex={this.handleChangeIndex} interval={3000}
-                                        autoPlay >
-                    {
-                        slideItems.map((item, position) => (
-                            <div key={position} className={classes.carouselImg}
-                                 style={{backgroundImage: "url(" + item.imageUrl + ")"}}>
-                            </div>
-                        ))
-                    }
-                </AutoPlaySwipeableViews >
+            <div className={parallaxClasses}
+                 style={{...style, transform: this.state.transform, display: this.props.show ? "block" : "none"}}>
+                <AliceCarousel items={this.renderItems()} buttonsDisabled infinite autoPlay
+                               duration={5000} fadeOutAnimation autoPlayInterval={3000} stopAutoPlayOnHover={false}>
+
+                </AliceCarousel>
                 {children}
             </div>
         );
@@ -57,10 +58,6 @@ class Parallax extends React.Component {
         if (window.innerWidth >= 768) {
             window.addEventListener("scroll", this.resetTransform);
         }
-
-        ServerManager.getSlideItems().then(response => {
-            this.setState({slideItems: response.data});
-        });
     }
 
     componentWillUnmount() {

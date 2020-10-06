@@ -1,39 +1,39 @@
 import React from "react";
-import App, { Container } from 'next/app';
+import App  from 'next/app';
 import Head from 'next/head';
 import {ThemeProvider} from "@material-ui/styles";
 import {CssBaseline} from "@material-ui/core";
 import {wrapper} from '../apis/redux'
 import theme from "../theme";
 import {withRouter} from "next/router";
-import MainStructure from "../MainStructure";
 
 class Application extends App {
 
     render() {
-        const {Component} = this.props;
+        const {Component, ...restProps} = this.props;
         return (
-            <Container>
+            <>
                 <Head>
+                    <meta charSet="utf-8"/>
                     <title>Facultad de Tecnologías Educativas</title>
-                    <link rel="stylesheet" href="/styles.css"/>
+                    <meta name="viewport"
+                          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"/>
+                    <meta name="theme-color" content={theme.palette.primary.main}/>
+                    <link rel="stylesheet" href="/assets/styles/styles.css"/>
+                    <link rel="stylesheet" href="/assets/styles/pace.css"/>
+                    <link rel="stylesheet" href="/assets/styles/carousel.css"/>
+
+                    <script src="/assets/scripts/pace.js">
+                    </script>
+
                 </Head>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
-                    {
-                        this.props.router.pathname === "/" ?
-                            (
-                                <MainStructure component={Component}/>
-                            )
-                            :
-                            (
-                                <div>
-                                    <Component/>
-                                </div>
-                            )
-                    }
+
+                    <Component {...restProps}/>
+
                 </ThemeProvider>
-            </Container>
+            </>
         );
     }
 

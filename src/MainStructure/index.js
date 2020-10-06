@@ -6,8 +6,8 @@ import {
 } from "@material-ui/core";
 import {Facebook as FacebookIcon, Information as InformationIcon, Twitter as TwitterIcon} from "mdi-material-ui";
 import LoginDialog from "../dialogs/LoginDialog";
-import Header from "../components/Header";
-import {LeftHeaderLinks, RightHeaderLinks} from '../components/Header'
+
+
 import {Footer, Parallax} from "../components";
 import GallerySection from "../components/Gallery";
 import ServerManager from "../apis/server";

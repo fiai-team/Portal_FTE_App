@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2019. Fábrica Introductoria de Aplicaciones Informáticas. Universidad de las Ciencias Informáticas (UCI)
- */
-
 import {
     boxShadow,
     dangerColor,
@@ -19,29 +15,12 @@ import tooltip from "../toolTipStyles.js";
 const headerStyle = theme => ({
     appBar: {
         display: "flex",
-        border: "0",
-        borderRadius: "3px",
         padding: "0.625rem 0",
-        marginBottom: "20px",
-        color: "#555",
-        width: "100%",
-        backgroundColor: "#fff",
-        boxShadow: "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)",
+        color: "white",
         transition: "all 150ms ease 0s",
         alignItems: "center",
         flexFlow: "row nowrap",
-        justifyContent: "flex-start",
-        position: "relative",
-        zIndex: "unset",
-
-    },
-    absolute: {
-        position: "absolute",
-        zIndex: "1100"
-    },
-    fixed: {
-        position: "fixed",
-        zIndex: "1100"
+        justifyContent: "flex-start"
     },
     container: {
         minHeight: "50px",
@@ -71,7 +50,7 @@ const headerStyle = theme => ({
     },
     iconAvatar: {
         height: "50px",
-        borderRadius: 0
+        borderRadius:0
     },
     appResponsive: {
         margin: "20px 10px"
@@ -257,8 +236,6 @@ const headerLinksStyles = theme => ({
         color: 555
     },
     dropdownLink: {
-        padding: '10px 20px !important',
-        textDecoration: 'none',
         "&,&:hover,&:focus": {
             color: "inherit",
             textDecoration: "none",
@@ -270,8 +247,8 @@ const headerLinksStyles = theme => ({
     marginRight5: {
         marginRight: "5px"
     },
-    loginIcon: {
-        display: "none"
+    loginIcon:{
+      display: "none"
     },
 });
 
