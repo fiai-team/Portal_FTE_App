@@ -1,0 +1,28 @@
+{
+  "name": "faculty_portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "axios": "^0.20.0",
+    "classnames": "^2.2.6",
+    "mdi-material-ui": "^6.18.0",
+    "next": "9.3.5",
+    "next-redux-wrapper": "^6.0.2",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-redux": "^7.2.1",
+    "react-swipeable-views": "^0.13.9",
+    "react-swipeable-views-utils": "^0.13.9",
+    "redux": "^4.0.5",
+    "tinycolor2": "^1.4.1"
+  }
+}
