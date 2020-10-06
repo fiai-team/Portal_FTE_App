@@ -4,13 +4,11 @@ import classNames from "classnames";
 import propTypes from "prop-types";
 import {withStyles} from "@material-ui/core";
 import styles from "./styles";
-import ServerManager from "../../apis/server";
 
 class Parallax extends React.Component {
 
     constructor(props) {
         super(props);
-console.log(props.items)
         this.state = {
             transform: "",
             index: 0,
@@ -25,7 +23,7 @@ console.log(props.items)
         const {slideItems} = this.state;
         return slideItems.map((item, position) => (
             <img key={position} className={classes.carouselImg}
-                 src={item.imageUrl}>
+                 src={item.imageUrl} alt="">
             </img>
         ))
 
@@ -93,5 +91,6 @@ Parallax.propTypes = {
     children: propTypes.node,
     style: propTypes.string,
     image: propTypes.string,
-    small: propTypes.bool
+    small: propTypes.bool,
+    items: propTypes.array.isRequired
 };

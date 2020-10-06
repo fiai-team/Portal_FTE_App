@@ -8,13 +8,13 @@ import {Parallax} from "../components";
 import Header from "../components/Header";
 import LeftHeaderLinks from "../components/Header/LeftHeaderLinks";
 import RightHeaderLinks from "../components/Header/RightHeaderLinks";
-import * as axios from "axios";
+import axios from "axios";
 
 class HomePage extends React.Component {
 
     render() {
         const {classes, pageProps} = this.props;
-        console.log(pageProps.slideItems)
+
         return (
             <div className={classes.root}>
                 <Header leftLinks={<LeftHeaderLinks/>}
